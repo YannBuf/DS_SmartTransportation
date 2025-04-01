@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "generated.smarttransportation.system";
+option java_outer_classname = "SystemServiceImpl";
+
+package SystemService;
+
+// System Service
+service SystemService {
+  rpc CalculateAvailableSpots (ZoneRequest) returns (AvailableSpotResponse);
+  rpc SensorError (SensorAlert) returns (MaintenanceConfirmation);
+  rpc UpdateParkingPrice (Pricing) returns (ConfirmationMessage);
+  rpc ComputeParkingFee (FeeQuery) returns (FeeResult);
+  rpc StreamAvailableSpots (ZoneRequest) returns (stream AvailableSpotResponse);  
+  rpc MonitorSensorStatus (stream SensorStatus) returns (stream MaintenanceConfirmation); 
+}
+
+message ZoneRequest {
+  string zoneId = 1;
+}
+
+message AvailableSpotResponse {
+  string zoneId = 1;
+  int32 availableSpot = 2;
+}
+
+message SensorAlert {
+  string spotId = 1;
+  string errorCode = 2;
+}
+
+message MaintenanceConfirmation {
+  bool success = 1;
+  string message = 2;
+}
+
+message Pricing {
+  string zoneId = 1;
+  float baseRate = 2;
+  float multiplier = 3;
+}
+
+message ConfirmationMessage {
+  bool success = 1;
+  string message = 2;
+}
+
+message FeeQuery {
+  string spotId = 1;
+  int64 entryTime = 2;
+  int64 exitTime = 3;
+}
+
+message FeeResult {
+  float parkingFee = 1;
+  int64 parkingTime = 2;
+}
+
+message SensorStatus {
+  string spotId = 1;
+  string status = 2;
+}

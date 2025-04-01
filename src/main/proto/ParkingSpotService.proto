@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "generated.smarttransportation.parkingspot";
+option java_outer_classname = "ParkingSpotServiceImpl";
+
+package ParkingSpotService;
+
+service ParkingSpotService {
+  rpc SendParkingStatus (ParkingStatus) returns (ConfirmationMessage);
+  rpc SendParkingDuration (DurationData) returns (ConfirmationMessage);
+  rpc SendSensorStatus (SensorStatus) returns (ConfirmationMessage);
+  rpc StreamParkingStatus (ZoneRequest) returns (stream ParkingStatus);
+}
+
+message ParkingStatus {
+  string spotId = 1;
+  bool isOccupied = 2;
+}
+
+message DurationData {
+  string spotId = 1;
+  int64 entryTime = 2;
+  int64 exitTime = 3;
+}
+
+message SensorStatus {
+  string spotId = 1;
+  bool isFunctional = 2;
+}
+
+message ZoneRequest {
+  string zoneId = 1;
+}
+
+message ConfirmationMessage {
+  bool success = 1;
+  string message = 2;
+}
+
+

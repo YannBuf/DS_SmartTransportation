@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "generated.smarttransportation.user";
+option java_outer_classname = "UserServiceImpl";
+
+package UserService;
+
+// User Service
+service UserService {
+  rpc ViewAvailableSpots (ZoneRequest) returns (AvailableSpot);
+  rpc ReserveSpot (ReservationRequest) returns (ReservationConfirm);
+  rpc NavigateToSpot (NavigationRequest) returns (NavigationPath);
+  rpc PayParkingFee (PaymentRequest) returns (PaymentReceipt);
+  rpc StreamNavigationPath (NavigationRequest) returns (stream NavigationPath);
+}
+
+message ZoneRequest {
+  string zoneId = 1;
+}
+
+message AvailableSpot {
+  repeated string availableSpotList = 1;
+}
+
+message ReservationRequest {
+  string userId = 1;
+  string spotId = 2;
+  int64 reservedUntil = 3;
+}
+
+message ReservationConfirm {
+  bool success = 1;
+  string confirmationId = 2;
+  string message = 3;
+}
+
+message NavigationRequest {
+  string userId = 1;
+  string spotId = 2;
+}
+
+message NavigationPath {
+  repeated string steps = 1;
+}
+
+message PaymentRequest {
+  string spotId = 1;
+  string userId = 2;
+}
+
+message PaymentReceipt {
+  string receiptId = 1;
+  float feePaid = 2;
+  string paymentStatus = 3;
+}
