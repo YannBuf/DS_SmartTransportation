@@ -3,6 +3,7 @@ generated\smarttransportation\user\PaymentReceipt.class
 generated\smarttransportation\system\SensorAlert$1.class
 generated\smarttransportation\parkingspot\ParkingStatus.class
 generated\smarttransportation\user\ReservationConfirm$Builder.class
+buf\smarttransportation\SmartParkingService.class
 generated\smarttransportation\system\ZoneRequest$Builder.class
 generated\smarttransportation\system\FeeQuery.class
 generated\smarttransportation\user\UserServiceGrpc$MethodHandlers.class
@@ -13,6 +14,7 @@ generated\smarttransportation\user\PaymentRequest$Builder.class
 generated\smarttransportation\system\Pricing$Builder.class
 generated\smarttransportation\user\AvailableSpot$Builder.class
 generated\smarttransportation\user\UserServiceGrpc$UserServiceImplBase.class
+buf\smarttransportation\SmartParkingClient.class
 generated\smarttransportation\user\ZoneRequestOrBuilder.class
 generated\smarttransportation\system\SensorStatus$1.class
 generated\smarttransportation\user\UserServiceGrpc$UserServiceMethodDescriptorSupplier.class
@@ -95,7 +97,6 @@ generated\smarttransportation\parkingspot\ParkingSpotServiceGrpc$ParkingSpotServ
 generated\smarttransportation\parkingspot\DurationData$1.class
 generated\smarttransportation\user\UserServiceGrpc.class
 generated\smarttransportation\user\ReservationConfirm.class
-buf\smarttransportation\SmartTransportation.class
 generated\smarttransportation\user\ReservationRequest$1.class
 generated\smarttransportation\system\ConfirmationMessage$Builder.class
 generated\smarttransportation\user\AvailableSpot$1.class
@@ -113,7 +114,6 @@ generated\smarttransportation\system\ZoneRequest$1.class
 generated\smarttransportation\user\UserServiceImpl$1.class
 generated\smarttransportation\system\ConfirmationMessageOrBuilder.class
 generated\smarttransportation\user\UserServiceGrpc$UserServiceFileDescriptorSupplier.class
-buf\smarttransportation\UserServiceClient.class
 generated\smarttransportation\system\FeeQueryOrBuilder.class
 generated\smarttransportation\user\PaymentReceipt$1.class
 generated\smarttransportation\user\NavigationRequest.class
@@ -123,7 +123,6 @@ generated\smarttransportation\system\Pricing.class
 generated\smarttransportation\parkingspot\ParkingSpotServiceGrpc.class
 generated\smarttransportation\parkingspot\ParkingSpotServiceGrpc$ParkingSpotServiceBaseDescriptorSupplier.class
 generated\smarttransportation\user\NavigationRequest$1.class
-buf\smarttransportation\GrpcServer.class
 generated\smarttransportation\parkingspot\ConfirmationMessage$1.class
 generated\smarttransportation\parkingspot\SensorStatus.class
 generated\smarttransportation\parkingspot\ParkingSpotServiceGrpc$ParkingSpotServiceStub.class
